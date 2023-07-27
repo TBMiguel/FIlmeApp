@@ -5,7 +5,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import br.pucpr.filmesapp.databinding.ActivityAdicionarEditarFilmeBinding
-import br.pucpr.filmesapp.model.DataStore
 import br.pucpr.filmesapp.model.Filme
 
 class AdicionarEditarNovoFilme : AppCompatActivity() {
@@ -20,21 +19,21 @@ class AdicionarEditarNovoFilme : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        intent.getIntExtra("filme", -1).apply {
-            position = this
-            if (position != -1) {
-                setData(position)
-            }
-        }
-
-        binding.botaoSalvar.setOnClickListener {
-
-            getData()?.let { city ->
-                saveCity(city)
-            } ?: run {
-                showMessage("Campos inválidos!")
-            }
-        }
+//        intent.getIntExtra("filme", -1).apply {
+//            position = this
+//            if (position != -1) {
+//                setData(position)
+//            }
+//        }
+//
+//        binding.botaoSalvar.setOnClickListener {
+//
+//            getData()?.let { city ->
+//                saveCity(city)
+//            } ?: run {
+//                showMessage("Campos inválidos!")
+//            }
+//        }
         binding.botaoCancelar.setOnClickListener {
             setResult(RESULT_CANCELED)
             finish()
@@ -50,7 +49,7 @@ class AdicionarEditarNovoFilme : AppCompatActivity() {
         if (verificaCamposNulos(titulo, categoria, descricao, avaliacao))
             return null
 
-        return Filme(titulo, categoria, descricao, avaliacao)
+        return Filme(titulo = titulo, categoria = categoria, descricao = descricao, avaliacao = avaliacao)
     }
 
     private fun verificaCamposNulos(titulo: String, categoria: String, descricao: String, avaliacao: Int) : Boolean {
@@ -60,28 +59,28 @@ class AdicionarEditarNovoFilme : AppCompatActivity() {
         return false
     }
 
-    private fun setData(position: Int) {
-
-        DataStore.getFilme(position).run {
-            binding.tituloFilme.setText(this.titulo)
-            binding.categoriaFilme.setText(this.categoria)
-            binding.descricaoFilme.setText(this.descricao)
-            binding.avaliacaoFilme.setText(this.avaliacao.toString())
-        }
-    }
-
-    private fun saveCity(filme: Filme) {
-
-        if (position == -1)
-            DataStore.adicionarFilme(filme)
-        else
-            DataStore.editarFilme(position, filme)
-        Intent().run {
-            putExtra("filme", filme.titulo)
-            setResult(RESULT_OK, this)
-        }
-        finish()
-    }
+//    private fun setData(position: Int) {
+//
+//        DataStore.getFilme(position).run {
+//            binding.tituloFilme.setText(this.titulo)
+//            binding.categoriaFilme.setText(this.categoria)
+//            binding.descricaoFilme.setText(this.descricao)
+//            binding.avaliacaoFilme.setText(this.avaliacao.toString())
+//        }
+//    }
+//
+//    private fun saveCity(filme: Filme) {
+//
+//        if (position == -1)
+//            DataStore.adicionarFilme(filme)
+//        else
+//            DataStore.editarFilme(position, filme)
+//        Intent().run {
+//            putExtra("filme", filme.titulo)
+//            setResult(RESULT_OK, this)
+//        }
+//        finish()
+//    }
 
     fun showMessage(message: String) {
 

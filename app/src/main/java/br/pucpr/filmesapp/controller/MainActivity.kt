@@ -5,8 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.recyclerview.widget.LinearLayoutManager
+import br.pucpr.filmesapp.database.DatabaseApplication
+import br.pucpr.filmesapp.database.dao.FilmesDao
 import br.pucpr.filmesapp.databinding.ActivityMainBinding
-import br.pucpr.filmesapp.model.DataStore
 import br.pucpr.filmesapp.model.Filme
 import br.pucpr.filmesapp.view.FilmesAdapter
 import com.google.android.material.snackbar.Snackbar
@@ -20,11 +21,15 @@ class MainActivity : AppCompatActivity() {
         ActivityMainBinding.inflate(layoutInflater)
     }
 
+    private val dao : FilmesDao by lazy {
+        DatabaseApplication.getInstance(this).filmesDao()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        DataStore.setContext(this)
+//        DataStore.setContext(this)
         leadRecyclerView()
         configurarFloatActionButton()
     }
@@ -33,7 +38,8 @@ class MainActivity : AppCompatActivity() {
         LinearLayoutManager(this).apply {
             this.orientation = LinearLayoutManager.HORIZONTAL
             binding.filmesRecyclerView.layoutManager = this
-            adapterFilmes = FilmesAdapter(DataStore.filmes).apply {
+            val listFilmes = dao.getFilmes().toMutableList()
+            adapterFilmes = FilmesAdapter(listFilmes).apply {
                 binding.filmesRecyclerView.adapter = this
             }
         }
@@ -64,15 +70,5 @@ class MainActivity : AppCompatActivity() {
                 adapterFilmes.notifyDataSetChanged()
             }
         }
-    }
-
-    private fun filmesDaLista() {
-        val filme1 = Filme("Harry Potter", "Aventura","descrição",3)
-        val filme2 = Filme("Velosos e Furioso", "Ação", "descrição",5)
-        val filme3 = Filme("SpiderMan", "Fantasia", "descrição",5)
-
-        listaFilmes.add(filme1)
-        listaFilmes.add(filme2)
-        listaFilmes.add(filme3)
     }
 }
