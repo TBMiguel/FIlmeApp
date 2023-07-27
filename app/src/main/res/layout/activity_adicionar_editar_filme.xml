@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".controller.AdicionarEditarNovoFilme"
+    android:layout_margin="10dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Inserir novo filme na lista de filmes"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Insira um título: "
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="right"/>
+
+        <EditText
+            android:id="@+id/tituloFilme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:inputType="textImeMultiLine|text"
+            android:background="@android:color/transparent"
+            android:hint="Harry Potter"
+            android:textColorHint="#33000000"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Insira a categoria: "
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="right"/>
+
+        <EditText
+            android:id="@+id/categoriaFilme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:inputType="textImeMultiLine|text"
+            android:background="@android:color/transparent"
+            android:hint="Fantasia"
+            android:textColorHint="#33000000"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Insira a avaliação: "
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="right"/>
+        <!--        descricao-->
+
+        <EditText
+            android:id="@+id/avaliacaoFilme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:inputType="number"
+            android:background="@android:color/transparent"
+            android:hint="5"
+            android:textColorHint="#33000000"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Insira a descricao do filme: "
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="right"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp">
+
+
+        <EditText
+            android:id="@+id/descricaoFilme"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:textSize="20sp"
+            android:inputType="textImeMultiLine|textLongMessage"
+            android:background="@android:color/transparent"
+            android:hint="Resumo do filme"
+            android:textColorHint="#33000000"/>
+    </LinearLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="20dp">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/botaoSalvar"
+                android:layout_width="120dp"
+                android:layout_height="60dp"
+                android:text="SALVAR"
+                android:textSize="15sp"
+                android:textColor="#FFFFFF"
+                android:textAllCaps="false"
+                android:background="@color/background_color"
+                android:layout_marginRight="12dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/botaoCancelar"
+                android:layout_width="120dp"
+                android:layout_height="60dp"
+                android:text="CANCELAR"
+                android:textSize="15sp"
+                android:textColor="#FFFFFF"
+                android:textAllCaps="false"
+                android:background="@color/background_color"/>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</LinearLayout>
