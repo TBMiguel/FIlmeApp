@@ -38,9 +38,8 @@ class MainActivity : AppCompatActivity() {
         LinearLayoutManager(this).apply {
             this.orientation = LinearLayoutManager.HORIZONTAL
             binding.filmesRecyclerView.layoutManager = this
-
-            listaFilmes.addAll(dao.getFilmes().toMutableList())
-            adapterFilmes = FilmesAdapter(listaFilmes).apply {
+            val listFilmes = dao.getFilmes().toMutableList()
+            adapterFilmes = FilmesAdapter(listFilmes).apply {
                 binding.filmesRecyclerView.adapter = this
             }
         }
