@@ -14,7 +14,7 @@ interface FilmesDao {
     @Update
     fun updateFilmes(filme: Filme)
 
-    @Query("SELECT * FROM filmes WHERE id = :id")
+    @Query("SELECT * FROM Filmes WHERE id = :id")
     fun loadFilmeById(id: Long): Filme
 
     @Query("SELECT * FROM Filmes")

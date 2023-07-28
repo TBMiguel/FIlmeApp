@@ -21,12 +21,11 @@ abstract class DatabaseApplication() : RoomDatabase() {
 
         @Synchronized
         fun getInstance(context : Context) : DatabaseApplication {
-
             if(INSTANCE == null) {
                 INSTANCE = Room.databaseBuilder(
                     context.applicationContext,
                     DatabaseApplication::class.java,
-                    "filmes.db").build()
+                    "filmes.db").allowMainThreadQueries().build() //allowMainThreadQueries rodar banco na mesma thread
             }
             return INSTANCE as DatabaseApplication
         }

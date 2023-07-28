@@ -49,7 +49,7 @@ class AdicionarEditarNovoFilme : AppCompatActivity() {
         if (verificaCamposNulos(titulo, categoria, descricao, avaliacao))
             return null
 
-        return Filme(titulo = titulo, categoria = categoria, descricao = descricao, avaliacao = avaliacao)
+        return Filme(0, titulo = titulo, categoria = categoria, descricao = descricao, avaliacao = avaliacao)
     }
 
     private fun verificaCamposNulos(titulo: String, categoria: String, descricao: String, avaliacao: Int) : Boolean {
