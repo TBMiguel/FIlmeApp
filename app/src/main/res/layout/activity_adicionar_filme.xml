@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".controller.AdicionarNovoFilme"
+    android:padding="16dp"
+    android:layout_margin="10dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Inserir novo filme na lista de filmes"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/background_color"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp">
+
+        <EditText
+            android:id="@+id/tituloFilme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="20dp"
+            android:textSize="20sp"
+            android:inputType="textImeMultiLine|text"
+            android:hint="Nome do filme"
+            android:textColorHint="#33000000"/>
+
+        <EditText
+            android:id="@+id/categoriaFilme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:paddingBottom="20dp"
+            android:inputType="textImeMultiLine|text"
+            android:hint="Gênero/Categoria do Filme"
+            android:textColorHint="#33000000"/>
+
+        <EditText
+            android:id="@+id/avaliacaoFilme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:inputType="number"
+            android:hint="Insira a classificação do filme (ex: 5)"
+            android:textColorHint="#33000000"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="30dp">
+
+        <EditText
+            android:id="@+id/descricaoFilme"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:textSize="20sp"
+            android:inputType="textImeMultiLine|textLongMessage"
+            android:background="@android:color/transparent"
+            android:hint="Insira um resumo do filme"
+            android:textColorHint="#33000000"/>
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="20dp">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/botaoSalvar"
+                android:layout_width="match_parent"
+                android:ems="10"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="Salvar"
+                android:textSize="15sp"
+                android:textColor="#FFFFFF"
+                android:textAllCaps="false"
+                android:background="@color/background_color"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/botaoCancelar"
+                android:layout_width="match_parent"
+                android:ems="10"
+                android:layout_height="30dp"
+                android:text="CANCELAR"
+                android:textSize="15sp"
+                android:textColor="#FFFFFF"
+                android:textAllCaps="false"
+                android:background="@color/background_color"/>
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

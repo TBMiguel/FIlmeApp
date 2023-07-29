@@ -19,4 +19,7 @@ interface FilmesDao {
 
     @Query("SELECT * FROM filmes")
     fun getFilmes() : List<Filme>
+
+    @Query("SELECT COUNT(id) FROM filmes")
+    fun getTotalFilmes() : Long
 }

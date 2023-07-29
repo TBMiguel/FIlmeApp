@@ -12,15 +12,35 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
-        android:layout_margin="20dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp">
 
         <TextView
             android:id="@+id/recentes"
             android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Quantidade de filmes recentes: "
+            android:layout_marginRight="40dp"
+            android:maxLines="1"
+            android:textColor="#777"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/quantidadeFilmes"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:ignore="MissingConstraints" />
+        <TextView
+            android:id="@+id/quantidadeFilmes"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Recentes"
+            android:text="0"
+            android:textColor="#777"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/recentes"
             android:textSize="20dp"
             android:textStyle="bold"
             tools:ignore="MissingConstraints" />

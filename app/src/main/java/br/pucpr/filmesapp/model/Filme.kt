@@ -1,5 +1,6 @@
 package br.pucpr.filmesapp.model
 
+import android.graphics.Bitmap
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -11,4 +12,5 @@ data class Filme(
     var categoria: String,
     var descricao: String,
     var avaliacao: Int,
+//    @ColumnInfo("filmes_photo") var filmePhoto: Bitmap
 )
